@@ -2,11 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class CameraController : MonoBehaviour
 {
-    public float speed;
     public float rotSpeed;
-
     private Vector3 myRot;
 
     // Start is called before the first frame update
@@ -18,14 +16,13 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float h = Input.GetAxis("Horizontal");
-        float v = Input.GetAxis("Vertical");
-        Vector3 dir = transform.forward * v + transform.right * h;
-        //transform.position += dir * speed * Time.deltaTime;
-
-        float mx = Input.GetAxis("Mouse X");
-        Vector3 r = Vector3.up * mx;
+        float my = Input.GetAxis("Mouse Y");
+        Vector3 r = Vector3.right * -my;
         myRot += r * Time.deltaTime * rotSpeed;
+        if (myRot.x > 80)
+            myRot.x = 80;
+        if (myRot.x < -80)
+            myRot.x = -80;
         transform.localEulerAngles = myRot;
     }
 }
