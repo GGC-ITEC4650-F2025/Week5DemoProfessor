@@ -9,10 +9,13 @@ public class PlayerController : MonoBehaviour
 
     private Vector3 myRot;
 
+    CharacterController myCC;
+
     // Start is called before the first frame update
     void Start()
     {
-        myRot = Vector3.zero; // new Vector3(0, 0, 0);   
+        myRot = Vector3.zero; // new Vector3(0, 0, 0); 
+        myCC = GetComponent<CharacterController>();  
     }
 
     // Update is called once per frame
@@ -22,6 +25,8 @@ public class PlayerController : MonoBehaviour
         float v = Input.GetAxis("Vertical");
         Vector3 dir = transform.forward * v + transform.right * h;
         //transform.position += dir * speed * Time.deltaTime;
+        myCC.Move(dir * speed * Time.deltaTime);
+
 
         float mx = Input.GetAxis("Mouse X");
         Vector3 r = Vector3.up * mx;
