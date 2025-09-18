@@ -25,8 +25,8 @@ public class PlayerController : MonoBehaviour
         float v = Input.GetAxis("Vertical");
         Vector3 dir = transform.forward * v + transform.right * h;
         //transform.position += dir * speed * Time.deltaTime;
-        myCC.Move(dir * speed * Time.deltaTime);
-
+        //myCC.Move(dir * speed * Time.deltaTime);
+        myCC.SimpleMove(dir * speed);
 
         float mx = Input.GetAxis("Mouse X");
         Vector3 r = Vector3.up * mx;
