@@ -18,7 +18,8 @@ public class InvPickup : MonoBehaviour
         GameObject otherGO = other.gameObject;
         if (otherGO.tag == "Player")
         {
-            inv.currentIndex = inventoryIndex;
+            inv.setCurrentIndex(inventoryIndex);
+
             Destroy(gameObject);
         }
     }

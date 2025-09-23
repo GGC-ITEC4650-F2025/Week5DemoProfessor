@@ -718,7 +718,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.2
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -5828,6 +5828,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe2aa4c5a1a044f42a29f587510f2007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cycleInventoryKey: 101
   currentIndex: -1
   allIcons:
   - {fileID: 21300000, guid: cd7cf3a70c87140f2b5d9fb6f7d57105, type: 3}
@@ -5835,6 +5836,7 @@ MonoBehaviour:
   allPrefabs:
   - {fileID: 3942441378189944537, guid: f88ca20e94ce240b18902906446addb3, type: 3}
   - {fileID: 3942441378189944537, guid: 14713f1ad18ce4652bc19db344cf07df, type: 3}
+  allOwned: 0000
 --- !u!1 &988351400
 GameObject:
   m_ObjectHideFlags: 0

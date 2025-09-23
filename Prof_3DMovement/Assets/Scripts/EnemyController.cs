@@ -27,6 +27,13 @@ public class EnemyController : MonoBehaviour
         //transform.forward = v;
 
         myAgent.SetDestination(playerTran.position);
+
+        //if you put enought blue snowmen in the game, this enemy dies
+        GameObject[] allBlueSnowMen = GameObject.FindGameObjectsWithTag("WaterDmg");
+        if (allBlueSnowMen.Length > 20)
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
