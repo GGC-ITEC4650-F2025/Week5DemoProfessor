@@ -30,4 +30,11 @@ public class InventoryMgr : MonoBehaviour
             iconImg.sprite = allIcons[currentIndex];
         }
     }
+
+    public GameObject getCurrentPrefab()
+    {
+        if (currentIndex < 0)
+            return null;
+        return allPrefabs[currentIndex];
+    }
 }
